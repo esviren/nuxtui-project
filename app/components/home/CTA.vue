@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui';
-const { locales, setLocale, t } = useI18n();
-
+const { t } = useI18n();
 
 const links = ref<ButtonProps[]>([
   {
@@ -19,10 +18,6 @@ const links = ref<ButtonProps[]>([
 </script>
 
 <template>
-    <UButton v-for="locale in locales" @click="setLocale(locale.code)">
-      {{ locale.name }}
-    </UButton>
-    
   <UPageCTA
     :title="$t('homeCTATitle')"
     :description="$t('homeCTADescription')"
